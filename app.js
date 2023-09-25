@@ -88,7 +88,8 @@ console.groupEnd()
 
 
 // SECTION global variables
-const secretMessage = '🧀🍔🍲🧀🧇🍝🍕'
+const secretMessage = '🧀🍔🍲'
+
 let userInput = ''
 
 // !SECTION
@@ -99,19 +100,47 @@ let userInput = ''
 function selectCheese() {
   userInput += '🧀'
   console.log('Selected Cheese!', userInput);
+  const userInputElement = document.getElementById('currentUserInput')
+  userInputElement.innerText = userInput
 }
 
 function selectPizza() {
   userInput += '🍕'
   console.log('Selected Pizza!', userInput);
+  updateUserInput()
 }
 
 function selectShortcake() {
   userInput += '🍰'
   console.log('Selected Shortcake!', userInput);
+  updateUserInput()
 }
 
+function selectFoodItem(foodItem) {
+  userInput += foodItem
+  console.log('Selected Food Item!', userInput);
+  updateUserInput()
+}
 
+function updateUserInput() {
+  const userInputElement = document.getElementById('currentUserInput')
+  userInputElement.innerText = userInput
+}
+
+function checkUserInputAgainstSecretCode() {
+  if (userInput == secretMessage) {
+    console.log('you got the secret code!');
+    const secretImageElement = document.getElementById('secretImage')
+
+    secretImageElement.innerHTML = '<img src="https://media1.giphy.com/media/Zu6AATBpCeUzm/giphy.webp?cid=ecf05e4703y5m1bzhvqjwqopyjs157ug8l2aaj3ra59yojoo&ep=v1_gifs_search&rid=giphy.webp&ct=g" alt="secret image">'
+  }
+  else {
+    console.log('you are so dumb!');
+    window.alert('YOU ARE THE DUMBEST LITTLE DOGGY EVER')
+    userInput = ''
+    updateUserInput()
+  }
+}
 
 // NOTE calls the function, tells the function to run
 // selectCheese()
@@ -119,4 +148,17 @@ function selectShortcake() {
 // const selectCheese = () => {
 
 // }
+
 // !SECTION
+
+
+// let emptyString = ''
+// let zero = -1
+// let weird;
+
+// if (weird) {
+//   console.log('truthy');
+// }
+// else {
+//   console.log('falsey');
+// }

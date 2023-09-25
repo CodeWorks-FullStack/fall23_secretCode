@@ -16,6 +16,10 @@
       <div class="col-12">
         <h1>Secret Message</h1>
       </div>
+      <!-- NOTE make sure your id's in HTML are unique -->
+      <!-- <div class="col-12 text-center">
+        <img id="secretImage" src="" alt="secret image">
+      </div> -->
     </div>
   </header>
 
@@ -27,17 +31,23 @@
         <button onclick="selectShortcake()">🍰</button>
       </div>
       <div class="col-12 mb-2 fs-2 text-center">
-        <button>🍔</button>
-        <button>🍝</button>
-        <button>🧇</button>
+        <button onclick="selectFoodItem('🍔')">🍔</button>
+        <button onclick="selectFoodItem('🍝')">🍝</button>
+        <button onclick="selectFoodItem('🧇')">🧇</button>
       </div>
       <div class="col-12 mb-2 fs-2 text-center">
-        <button>🥞</button>
-        <button>🍨</button>
-        <button>🍲</button>
+        <button onclick="selectFoodItem('🥞')">🥞</button>
+        <button onclick="selectFoodItem('🍨')">🍨</button>
+        <button onclick="selectFoodItem('🍲')">🍲</button>
       </div>
-      <div class="col-12 text-center">
-        <button>Check Secret Code</button>
+      <div class="col-12 text-center mb-3">
+        <button onclick="checkUserInputAgainstSecretCode()">Check Secret Code</button>
+      </div>
+      <div class="col-12">
+        <p id="currentUserInput"></p>
+      </div>
+      <div id="secretImage" class="col-12 text-center">
+        <!-- <img src="" alt="secret image"> -->
       </div>
     </div>
   </main>
